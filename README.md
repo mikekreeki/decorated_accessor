@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 end
 ```
 
-DecoratedAccessor is designed to play nice with Draper decorators (both single resource and collection decorators) wrapping the value in a decorator if the object responds to `#decorate`.
+DecoratedAccessor is designed to play nice with [draper](https://github.com/drapergem/draper) decorators (both single resource and collection decorators) wrapping the value in a decorator if the object responds to `#decorate`.
 
 ```ruby
 # app/decorators/user_decorator.rb
