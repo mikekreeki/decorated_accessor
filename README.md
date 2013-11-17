@@ -43,8 +43,7 @@ DecoratedAccessor is designed to play nice with Draper decorators (both single r
 ```ruby
 # app/decorators/user_decorator.rb
 
-class UserDecorator
-  
+class UserDecorator < Draper::Decorator
   def membership_status
     if subscribed?
       "Active membership"
@@ -52,7 +51,6 @@ class UserDecorator
       "Inactive membership"
     end
   end
-
 end
 
 # app/views/users/show.html.slim
