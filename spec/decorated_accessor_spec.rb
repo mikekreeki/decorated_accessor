@@ -61,7 +61,18 @@ describe DecoratedAccessor::Core do
       end
     end
 
-    context 'when object not decoratable'
+    context 'when object not decoratable' do
+      let(:user) { Object.new }
+
+      before do
+        controller_class.decorate(*names)
+        controller.user = user
+      end
+
+      it 'does not try to decorate the object' do
+        expect { controller.render }.not_to raise_error
+      end
+    end
 
     context 'when no accessor' do
       it 'does not raise' do
