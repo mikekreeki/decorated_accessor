@@ -2,7 +2,7 @@
 
 An experiment simplifying sharing state between Rails controllers and views when using Draper decorators.
 
-This is similar to Draper's very own `decorates_assigned` which decorates assigned *instance variables* on render. This library provides controller accessors and does the same for them.
+This is similar to Draper's very own `decorates_assigned` which decorates assigned *instance variables* on render. This library provides controller accessors available in the view and does the same for them.
 
 Based on [view_accessor](https://github.com/invisiblefunnel/view_accessor).
 
