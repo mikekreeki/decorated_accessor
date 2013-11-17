@@ -20,15 +20,15 @@ And then execute:
 
 Include it in your controller:
 
-'''ruby
+```ruby
 class ApplicationController < ActionController::Base
   include DecoratedAccessor::Core
 end
-'''
+```
 
 In controller assign the accessor:
 
-'''ruby
+```ruby
 class UsersController < ApplicationController
   decorate :user
 
@@ -36,11 +36,11 @@ class UsersController < ApplicationController
     self.user = User.find(1)
   end
 end
-'''
+```
 
 DecoratedAccessor is designed to play nice with Draper decorators (both single resource and collection decorators) wrapping the value in a decorator if the object responds to `#decorate`.
 
-'''ruby
+```ruby
 # app/decorators/user_decorator.rb
 
 class UserDecorator
@@ -58,7 +58,7 @@ end
 # app/views/users/show.html.slim
 
 = user.membership_status
-'''
+```
 
 ## Contributing
 
