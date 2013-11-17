@@ -15,11 +15,11 @@ describe DecoratedAccessor::Core do
     controller_class.send :include, DecoratedAccessor::Core
   end
 
-  before do
-    controller_class.decorate(*names)
-  end
-
   describe '.decorate' do
+    before do
+      controller_class.decorate(*names)
+    end
+
     it "defines a getter with a given name" do
       names.each do |name|
         expect(controller).to respond_to(name)
@@ -43,6 +43,10 @@ describe DecoratedAccessor::Core do
     context 'when object decoratable' do
       let(:user) { double('user', decorate: true) }
 
+      before do
+        controller_class.decorate(*names)
+      end
+
       it 'decorates object' do
         expect(user).to receive(:decorate)
 
@@ -58,6 +62,12 @@ describe DecoratedAccessor::Core do
     end
 
     context 'when object not decoratable'
+
+    context 'when no accessor' do
+      it 'does not raise' do
+        expect { controller.render }.not_to raise_error
+      end
+    end
   end
 
 end

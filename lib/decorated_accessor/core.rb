@@ -18,7 +18,7 @@ module DecoratedAccessor
     end
 
     def __decorated_methods__
-      self.class.__decorated_methods__
+      self.class.__decorated_methods__ || []
     end
 
     def render(*)
